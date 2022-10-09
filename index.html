@@ -18,68 +18,69 @@
 
     <main>
         <div class="d-flex flex-row">
-            <div class="d-flex flex-column p-4 col-md-3">
-                <h2>Search for a City:</h2>
-                <input class="my-2" type="text" placeholder="..." id="search-value">
-                <button class="btn-secondary my-2" id="search">Search</button>
-                
+            <div class=" p-4 col-md-3">
+                <div class="d-flex flex-column border-bottom">
+                    <h2>Search for a City:</h2>
+                    <input class="my-2" type="text" placeholder="..." id="search-value">
+                    <button class=" btn btn-secondary my-2" id="search">Search</button>
+                </div>
                 <div>
                     <div class="d-flex flex-column my-2" id="saved-searches">Saved Searches</div>
                 </div>
             </div>
 
             <div class="p-4 col-md-8">
-                <div class="p-2 border">
-                    <h3 id="city-name">City Name <span id="currentDay"></span></h3>
-                    <h6 class="card-text">Temp:</h6>
-                    <h6 class="card-text">Wind:</h6>
-                    <h6 class="card-text">Humidity:</h6>
+                <div class="p-2 border border-dark">
+                    <p id="city-name">City Name <span id="currentDay"></span></p>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Wind:</p>
+                    <p class="card-text">Humidity:</p>
                 </div>
 
                 <div>
                     <h3>5-Day Forecast:</h3>
 
-                    <div class="d-flex flex-row  justify-content-between">
-                        <div class="card">
+                    <div class="d-flex flex-row  justify-content-between" id="fiveDay">
+                        <!-- <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title" id="dayOne"></h5>
-                                <h6 class="card-text">Temp:</h6>
-                                <h6 class="card-text">Wind:</h6>
-                                <h6 class="card-text">Humidity:</h6>
+                                <p class="card-title" id="dayOne"></p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Wind:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title" id="dayTwo"></h5>
-                                <h6 class="card-text">Temp:</h6>
-                                <h6 class="card-text">Wind:</h6>
-                                <h6 class="card-text">Humidity:</h6>
+                                <p class="card-title" id="dayTwo"></p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Wind:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title" id="dayThree"></h5>
-                                <h6 class="card-text">Temp:</h6>
-                                <h6 class="card-text">Wind:</h6>
-                                <h6 class="card-text">Humidity:</h6>
+                                <p class="card-title" id="dayThree"></p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Wind:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title" id="dayFour"></h5>
-                                <h6 class="card-text">Temp:</h6>
-                                <h6 class="card-text">Wind:</h6>
-                                <h6 class="card-text">Humidity:</h6>
+                                <p class="card-title" id="dayFour"></p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Wind:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title" id="dayFive"></h5>
-                                <h6 class="card-text">Temp:</h6>
-                                <h6 class="card-text">Wind:</h6>
-                                <h6 class="card-text">Humidity:</h6>
+                                <p class="card-title" id="dayFive"></p>
+                                <p class="card-text">Temp:</p>
+                                <p class="card-text">Wind:</p>
+                                <p class="card-text">Humidity:</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
 
