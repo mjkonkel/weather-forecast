@@ -2,3 +2,17 @@
     outline: 3px solid limegreen !important;
     background: rgba(0, 151, 0, 0.1) !important;
 } */
+
+ul {
+    list-style: none;
+}
+
+#title {
+    height: 60px;
+}
+
+.card {
+    background-color: rgba(41, 41, 114, 0.685);
+    color: white;
+    padding: 3px;
+}
