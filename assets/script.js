@@ -3,6 +3,7 @@ var savedList = document.getElementById('saved-searches')
 var searchValueEl = document.getElementById('search-value');
 var fiveDayContainer = document.getElementById('fiveDay')
 var currentContainer = document.getElementById('currentWeather')
+var currentCity = document.getElementById('city-name')
 
 function handleUserinput() {
   var userInput = searchValueEl.value
@@ -17,10 +18,7 @@ function searchForCity(searchValue) {
 
   var nameUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchValue + '&limit=1&appid=23370ae6f515fc79e6570bdda3897515'
 
-  // var cityName = document.getElementById('city-name');
-  // console.log(cityName);
-  // cityName.textContent= searchValue;
-
+  
   fetch(nameUrl)
     .then(function (response) {
       return response.json();
@@ -32,9 +30,13 @@ function searchForCity(searchValue) {
       console.log(data[0].name);
       var lat = data[0].lat;
       var lon = data[0].lon;
+      var name = data[0].name;
+
+      currentCity.textContent = 'Current Weather: ' + name
 
       fiveDayForecast(lat, lon)
       currentWeather(lat, lon)
+      savedSearch()
     })
 
 }
@@ -50,7 +52,10 @@ function currentWeather(lat, lon) {
       console.log(data);
       console.log(data.main.temp);
       console.log(data.dt);
-
+      
+      var iconUrl = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+      console.log(iconUrl);
+      
       var currentDisplay = document.createElement('div')
       var currentTitle = document.createElement('h3')
       var currentIcon = document.createElement('i')
@@ -65,7 +70,8 @@ function currentWeather(lat, lon) {
       var year = date.toLocaleString('default', { year: '2-digit' });
       var formattedDate = month + '/' + day + '/' + year;
 
-      currentTitle.textContent = searchValueEl.value + ' ' +formattedDate
+      currentTitle.textContent = formattedDate
+      currentIcon.setAttribute('src', iconUrl)
       currentTemp.textContent = 'Temp: ' + data.main.temp + ' \u00B0F'
       currentWind.textContent = 'Wind: ' + data.wind.speed + ' MPH'
       currentHumid.textContent = 'Humidity: ' + data.main.humidity + ' \%'
@@ -122,9 +128,17 @@ function fiveDayForecast(lat, lon) {
         fiveDayContainer.append(card)
       }
     })
-
-
 }
+
+// function savedSearch() {
+//   var previousSreach = searchValueEl.value
+//   var previousArray = []
+//   console.log(previousSreach);
+//   previousArray = JSON.parse(localStorage.getItem('search-history'));
+//   previousArray.push(previousSreach);
+  // console.log(previousArray);
+  // localStorage.setItem('search-history', JSON.stringify(previousArray));
+// }
 
 
 searchBtn.addEventListener('click', handleUserinput)
