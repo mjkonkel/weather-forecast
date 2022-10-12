@@ -149,7 +149,7 @@ function creatBtn() {
   for (var i = 0; i < savedCities.length; i++) {
     var newBtn = document.createElement('button')
 
-    newBtn.setAttribute('class', 'btn-primary btn m-2')
+    newBtn.setAttribute('class', 'btn-info btn m-2')
     newBtn.setAttribute('value', savedCities[i])
     newBtn.textContent = savedCities[i]
     newBtn.addEventListener('click', btnClick)
